@@ -45,6 +45,3 @@ int main() {
 	return 0;
 
 }
-
-//int tBuild, tPlace, tRender, tPrint, tRotate;
-//200iterations rendering Average 66ms
