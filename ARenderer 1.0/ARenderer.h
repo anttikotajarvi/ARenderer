@@ -39,7 +39,7 @@ public:
 	Point projectVirtualPoint(Point a);
 
 	VMap build(Triangle P);
-	void buildModel(Models::Model M, Point O, double scale, double angle);
+	void buildModel(Models::Model M, Point O, double scale, Point R);
 	void placeVMap(VMap Map);
 	void render(VMap Map);
 	void render();

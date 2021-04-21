@@ -194,17 +194,32 @@ VMap ARenderer::build(Triangle P) {
 
 	return TempVMap;
 }
-void ARenderer::buildModel(Models::Model M, Point O, double scale, double angle) {
+void ARenderer::buildModel(Models::Model M, Point O, double scale, Point R) {
 	int model_size = M.f.size();
 	for (int i = 0; i < model_size; i++) {
 		Point A = M.v[M.f[i][0]];
 		Point B = M.v[M.f[i][1]];
 		Point C = M.v[M.f[i][2]];
+		if (R.x != 0) {
+			A = rotateAlongX(A, O, R.x);
+			B = rotateAlongX(B, O, R.x);
+			C = rotateAlongX(C, O, R.x);
+		}
+		if (R.y != 0) {
+			A = rotateAlongY(A, O, R.y);
+			B = rotateAlongY(B, O, R.y);
+			C = rotateAlongY(C, O, R.y);
+		}
+		if (R.z != 0) {
+			A = rotateAlongZ(A, O, R.z);
+			B = rotateAlongZ(B, O, R.z);
+			C = rotateAlongZ(C, O, R.z);
+		}
 		placeVMap(build({
-			rotateAlongY({O.x + scale * A.x, O.y + scale * A.y, O.z + scale * A.z}, O, angle),
-			rotateAlongY({O.x + scale * B.x, O.y + scale * B.y, O.z + scale * B.z}, O, angle),
-			rotateAlongY({O.x + scale * C.x, O.y + scale * C.y, O.z + scale * C.z}, O, angle)
-			}));
+			{O.x + scale * A.x, O.y + scale * A.y, O.z + scale * A.z},
+			{O.x + scale * B.x, O.y + scale * B.y, O.z + scale * B.z},
+			{O.x + scale * C.x, O.y + scale * C.y, O.z + scale * C.z}
+		}));
 	}
 }
 void ARenderer::placeVMap(VMap Map) {
