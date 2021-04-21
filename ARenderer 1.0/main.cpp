@@ -33,31 +33,12 @@ int main() {
 	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &cfi);
 
 
-	HANDLE wHnd;
-	HANDLE rHnd;
+	ARenderer d(classic, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-	SMALL_RECT windowSize = { 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1 };
-
-	COORD bufferSize = { SCREEN_WIDTH, SCREEN_HEIGHT };
-
-	COORD characterBufferSize = { SCREEN_WIDTH, SCREEN_HEIGHT };
-	COORD characterPosition = { 0, 0 };
-	SMALL_RECT consoleWriteArea = { 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1 };
-
-	wHnd = GetStdHandle(STD_OUTPUT_HANDLE);
-	rHnd = GetStdHandle(STD_INPUT_HANDLE);
-
-	SetConsoleWindowInfo(wHnd, TRUE, &windowSize);
-	SetConsoleScreenBufferSize(wHnd, bufferSize);
-
-
-	ARenderer d(smooth, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-	ARC::Models::Model teapot = ARC::Models::import_obj("C:\\Users\\40oz\\Downloads\\obj\\chess.obj");
+	ARC::Models::Model teapot = ARC::Models::import_obj("C:\\Users\\40oz\\Downloads\\teapot.obj");
 	Point O{ 80, 50, 100 };
 
-
-	d.buildModel(teapot, O, 5, 0.05);
+	d.buildModel(teapot, O, 30, 0.05);
 
 	d.render();
 	d.CM.print();
