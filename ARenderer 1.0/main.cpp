@@ -35,13 +35,15 @@ int main() {
 
 	ARenderer d(classic, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-	ARC::Models::Model teapot = ARC::Models::import_obj("C:\\Users\\40oz\\Downloads\\teapot.obj");
-	Point O{ 80, 50, 100 };
-
-	d.buildModel(teapot, O, 30, 0.05);
-
+	Triangle Example{
+		{10,10,10},
+		{20,150,60},
+		{150,100,180}
+	};		
+	d.placeVMap(d.build(Example));
 	d.render();
 	d.CM.print();
+
 	return 0;
 
 }
