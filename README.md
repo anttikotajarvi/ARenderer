@@ -1,7 +1,7 @@
 # ARenderer
 Example of rendering a triangle
 
-```
+```c++
 //Create instance of the class, 'classic' is one of 2 character palettes defined in palettes.cpp
 ARenderer d(classic, SCREEN_WIDTH, SCREEN_HEIGHT);
 
