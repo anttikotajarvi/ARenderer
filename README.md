@@ -37,8 +37,8 @@ d.CM.print();
 
 # Render .obj
 ARenderer::buildModel() \
-Current obj implementation only supports faces in order of three (i.e teapot.obj works fine) 
-Quick script to move the object on screen with keyboard controls, WASD and QE for movement,
+Current obj implementation only supports faces in order of three (i.e teapot.obj works fine) \
+Heres a Quick script to move the object on screen with keyboard controls, WASD and QE for movement,
 arrow keys and .- for rotation and ÖÄ (148 and 132) for scale, dont know what the keys are for other than finnish keyboard layouts...
 ```c++
 ARenderer d(classic, SCREEN_WIDTH, SCREEN_HEIGHT);
