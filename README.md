@@ -35,7 +35,7 @@ d.render(d.build(example));
 d.CM.print();
 ```
 
-#Render .obj
+# Render .obj
 ARenderer::buildModel
 Current obj implementation only supports faces in order of three (i.e teapot.obj works fine) 
 Quick script to move the object on screen with keyboard controls, WASD and QE for movement,
