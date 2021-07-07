@@ -1,4 +1,5 @@
 # ARenderer
+![Teapot](https://user-images.githubusercontent.com/61788670/124785971-ff166400-df4f-11eb-9f05-df6a9ee0e1a3.PNG)
 Example of rendering a triangle
 
 ```c++
